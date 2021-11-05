@@ -18,10 +18,39 @@ namespace UserRegistrationTesting
 
         //string firstNameInput = "Shw" ;
         string firstNamePattern = "^[A-Z]{1}[a-z]{2}$";
+        string lastNamePattern = "^[A-Z]{1}[a-z]{2}$";
+
+        /// <summary>
+        /// Gets the first name of the valid user.
+        /// </summary>
+        /// <returns></returns>
         public string getValidUserFirstName()
         {
             Regex regex = new Regex(firstNamePattern);
-            //  Console.WriteLine("UC8 Rule4 password Validation ");
+            
+
+            if (regex.IsMatch(message))
+            {
+                //Console.WriteLine(word + "---> valid");
+                return "valid";
+            }
+            else
+            {
+                //Console.WriteLine(word + "---> invalid");
+                return "invalid";
+            }
+
+        }
+
+        /// <summary>
+        /// Gets the last name of the valid user.
+        /// </summary>
+        /// <returns></returns>
+        public string getValidUserLastName()
+        {
+
+            Regex regex = new Regex(lastNamePattern);
+
 
             if (regex.IsMatch(message))
             {
