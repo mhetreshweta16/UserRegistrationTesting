@@ -40,6 +40,9 @@ namespace TestProject1
             Assert.AreEqual(expected, actual);
         }
 
+        /// <summary>
+        /// Tests the user email.
+        /// </summary>
         [TestMethod]
         public void TestUserEmail()
         {
@@ -49,6 +52,24 @@ namespace TestProject1
             //Act
             TestingClass testing = new TestingClass(message);
             string actual = testing.getValidUserEmail();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
+
+        /// <summary>
+        /// Tests the user mobile number.
+        /// </summary>
+        [TestMethod]
+        public void TestUserMobileNumber()
+        {
+            string message = "91 8686531051";
+            string expected = "valid";
+
+            //Act
+            TestingClass testing = new TestingClass(message);
+            string actual = testing.getValidMobileNumber();
 
             //Assert
             Assert.AreEqual(expected, actual);
