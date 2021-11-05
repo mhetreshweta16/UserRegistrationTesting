@@ -21,6 +21,7 @@ namespace UserRegistrationTesting
         string lastNamePattern = "^[A-Z]{1}[a-z]{2}$";
         string emailPattern = "^[a-z]{3}[.][a-z]*[@]{1}[bl]{2}[.]{1}[co]{2}[.]{1}[a-z]*$";
         string mobileNoPattern = "^[1-9]{2}[ ]{1}[0-9]{10}$";
+        string passwordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8}$";
 
         /// <summary>
         /// Gets the first name of the valid user.
@@ -96,6 +97,24 @@ namespace UserRegistrationTesting
         public string getValidMobileNumber()
         {
             Regex regex = new Regex(mobileNoPattern);
+
+
+            if (regex.IsMatch(message))
+            {
+                //Console.WriteLine(word + "---> valid");
+                return "valid";
+            }
+            else
+            {
+                //Console.WriteLine(word + "---> invalid");
+                return "invalid";
+            }
+        }
+
+        public string getValidUserPassword()
+        {
+
+            Regex regex = new Regex(passwordPattern);
 
 
             if (regex.IsMatch(message))

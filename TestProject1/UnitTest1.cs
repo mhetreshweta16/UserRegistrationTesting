@@ -75,5 +75,23 @@ namespace TestProject1
             Assert.AreEqual(expected, actual);
 
         }
+
+        /// <summary>
+        /// Tests the user password.
+        /// </summary>
+        [TestMethod]
+        public void TestUserPassword()
+        {
+            string message = "Shweta1&";
+            string expected = "valid";
+
+            //Act
+            TestingClass testing = new TestingClass(message);
+            string actual = testing.getValidUserPassword();
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+
+        }
     }
 }
